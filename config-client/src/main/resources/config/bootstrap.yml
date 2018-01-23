@@ -1,0 +1,27 @@
+server:
+    port: 8083
+
+spring:
+    profiles:
+        active: dev
+    application:
+        name: config-client
+    cloud:
+        config:
+            uri: http://admin:admin@localhost:8761
+            profile: dev
+#        bootstrap:
+#            enables: false
+
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+#            defaultZone: http://admin:admin@localhost:8761/eureka/
+            defaultZone: http://admin:admin@localhost:8761/eureka/
+#jhipster:
+#    security:
+#        authentication:
+#            jwt:
+#                secret: my-secret-token-to-change-in-production
