@@ -1,0 +1,6 @@
+biocloud:
+    ftp:
+        host: 10.3.128.50
+        port: 22
+        user: cloud
+        password: 123.nopassword

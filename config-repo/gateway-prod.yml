@@ -1,0 +1,20 @@
+server:
+    port: 8083
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+#            defaultZone: http://admin:admin@localhost:8761/eureka/
+            defaultZone: http://admin:admin@localhost:8761/eureka/
+zuul:
+    routes:
+        config-client:
+            path: /client/**
+            service-id: config-client
+#ribbon:
+#      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule # 配置服务端负载均衡策略
+
+#ribbon:
+#    eureka:
+#        enabled: false

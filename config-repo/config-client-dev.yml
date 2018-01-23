@@ -1,0 +1,28 @@
+yuanwj:
+    swagger:
+        title: Config-client Remote API
+        description: config-clientAPI documentation
+        version: 0.0.1
+        termsOfServiceUrl:
+        contactName: yuanwj
+        contactUrl:
+        contactEmail: yuanwj0929@gmail.com
+        license:
+        licenseUrl:
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/prataculture?useUnicode=true&characterEncoding=utf8&autoReconnect=true&noAccessToProcedureBodies=true
+        name: prataculture
+        username: root
+        password:
+mybatis:
+    type-aliases-package: com.yuanwj.model
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+        mapUnderscoreToCamelCase: true
+
+#spring:
+#    cloud:
+#        config:
+#            overrideNone: true
