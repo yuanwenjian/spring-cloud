@@ -23,5 +23,20 @@ To run the cloned repository;
 * For development run `./mvnw -Pdev,webpack` to just start in development or run `./mvnw` and run `yarn && yarn start` for hot reload of client side code.
 * For production profile run `./mvnw -Pprod`
 
+## 项目介绍
+以上为jhipster官方readme文档
+## 使用步骤
+1. [官网][jhipster官网]下载jhipster-registry项目 git@github.com:jhipster/jhipster-registry.git
+2. 运行前端
+    - yarn 
+    - yarn add node-sass
+    - yarn start
+3. 启动项目
+4. 项目查看
+http://localhost:8761/
+
+
+
 [travis-image]: https://travis-ci.org/jhipster/jhipster-registry.svg?branch=master
 [travis-url]: https://travis-ci.org/jhipster/jhipster-registry
+[jhipster官网]: https://github.com/jhipster/jhipster-registry

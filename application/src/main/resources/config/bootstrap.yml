@@ -12,12 +12,10 @@ spring:
         config:
             server:
                 git:
-                    uri: https://github.com/yuanwenjian/spring-cloud
-                    search-paths: config-repo
-                    username: yuanwj0929@163.com
-                    password: wen19930929
+                    uri: https://github.com/yuanwenjian/config-repo
+#                    search-paths: config-repo
 #                bootstrap: true
-##            fail-fast: true
+            fail-fast: true
 #            # name of the config server's property source (file.yml) that we want to use
             name: registry
             profile: dev # profile(s) of the property source
@@ -29,5 +27,5 @@ spring:
 #        version: #project.version#
 
 # uncomment to enable encryption features
-#encrypt:
-#    key: my-secret-encryption-key-to-change-in-production
+encrypt:
+    key: my-secret-encryption-key-to-change-in-production
