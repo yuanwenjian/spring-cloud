@@ -9,6 +9,12 @@ yuanwj:
         contactEmail: yuanwj0929@gmail.com
         license:
         licenseUrl:
+
+    ftp:
+        host: 192.168.8.60
+        password: 123.bmk
+        username: bmk
+        port: 22
 spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver

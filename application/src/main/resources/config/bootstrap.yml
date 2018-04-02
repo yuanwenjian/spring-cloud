@@ -5,21 +5,24 @@
 
 spring:
     application:
-        name: jhipster-registry
+        name: registry
     profiles:
         active: dev
     cloud:
         config:
             server:
                 git:
-                    uri: https://github.com/yuanwenjian/config-repo
+                    uri: https://github.com/yuanwenjian/spring-cloud
+                    search-paths: config-repo
+                    username: yuanwj0929@163.com
+                    password: wen19930929
 #                bootstrap: true
 ##            fail-fast: true
 #            # name of the config server's property source (file.yml) that we want to use
-#            name: registry
-#            profile: dev # profile(s) of the property source
-#            label: master # toggle to switch to a different version of the configuration as stored in git
-#            # it can be set to any label, branch or commit of the config source git repository
+            name: registry
+            profile: dev # profile(s) of the property source
+            label: master # toggle to switch to a different version of the configuration as stored in git
+            # it can be set to any label, branch or commit of the config source git repository
 
 #info:
 #    project:

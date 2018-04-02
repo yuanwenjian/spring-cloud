@@ -16,7 +16,7 @@
 
 spring:
     application:
-        name: jhipster-registry
+        name: registry
     jackson:
         serialization.write_dates_as_timestamps: false
     mvc:
@@ -65,7 +65,7 @@ security:
 
 eureka:
     instance:
-        appname: jhipster-registry
+        appname: registry
         instanceId: jhipsterRegistry:${spring.application.instance_id:${random.value}}
         prefer-ip-address: true
         lease-renewal-interval-in-seconds: 5
