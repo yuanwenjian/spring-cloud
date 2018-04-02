@@ -10,16 +10,11 @@ spring:
         config:
             uri: http://admin:admin@localhost:8761
             profile: dev
+            name: config-client
 #        bootstrap:
 #            enables: false
 
-eureka:
-    instance:
-        prefer-ip-address: true
-    client:
-        serviceUrl:
-#            defaultZone: http://admin:admin@localhost:8761/eureka/
-            defaultZone: http://admin:admin@localhost:8761/eureka/
+
 #jhipster:
 #    security:
 #        authentication:

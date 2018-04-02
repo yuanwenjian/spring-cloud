@@ -12,8 +12,8 @@ spring:
         config:
             server:
                 git:
-                    uri: https://github.com/yuanwenjian/config-repo
-#                    search-paths: config-repo
+                    uri: https://github.com/yuanwenjian/spring-cloud
+                    search-paths: config-repo
 #                bootstrap: true
             fail-fast: true
 #            # name of the config server's property source (file.yml) that we want to use
