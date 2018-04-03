@@ -1,5 +1,5 @@
 .idea/
-.vacode/
+.vscode/
 *target/
 */*.iml
 *.log
