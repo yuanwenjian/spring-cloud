@@ -5,7 +5,7 @@
 
 <mapper namespace="com.yuanwj.repository.UserMapper">
 
-    <select id="findByEmail" resultType="com.yuanwj.model.User" parameterType="string">
+    <select id="findByEmail" resultType="User" parameterType="string">
         SELECT * FROM t_user
         <where>
             <if test="_parameter !='' and _parameter !=null ">

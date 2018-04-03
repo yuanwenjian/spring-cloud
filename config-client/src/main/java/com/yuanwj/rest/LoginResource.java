@@ -7,6 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
@@ -16,13 +17,13 @@ import javax.inject.Inject;
  */
 @RestController
 @RequestMapping(value = "/api/v1/login")
-@Api(tags = "外部操作api")
+@Api(description = "外部操作api")
 public class LoginResource {
 
     @Inject
     private TokenService tokenService;
 
-    @RequestMapping(value = "login")
+    @RequestMapping(value = "login",method = RequestMethod.GET)
     @ApiOperation(value = "用户登录")
     public String login(String userName,String password){
         User user =new User();

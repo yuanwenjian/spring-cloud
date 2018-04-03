@@ -8,3 +8,4 @@ spring:
         config:
             uri: http://admin:admin@192.168.8.60:8761
             profile: dev
+            name: gateway

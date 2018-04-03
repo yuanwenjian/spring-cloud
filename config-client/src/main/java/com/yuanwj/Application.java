@@ -10,7 +10,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.core.env.Environment;
 
-import javax.inject.Inject;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * Created by bmk on 17-11-28.
@@ -22,10 +23,24 @@ import javax.inject.Inject;
 public class Application {
     private static final Logger LOG= LoggerFactory.getLogger(Application.class);
 
-    @Inject
-    private Environment environment;
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    public static void main(String[] args) throws UnknownHostException {
+        SpringApplication app = new SpringApplication(Application.class);
+        Environment env = app.run(args).getEnvironment();
+        String protocol = "http";
+        if (env.getProperty("server.ssl.key-store") != null) {
+            protocol = "https";
+        }
+        LOG.info("\n----------------------------------------------------------\n\t" +
+                        "Application '{}' is running! Access URLs:\n\t" +
+                        "Local: \t\t{}://localhost:{}\n\t" +
+                        "External: \t{}://{}:{}\n\t" +
+                        "Profile(s): \t{}\n----------------------------------------------------------",
+                env.getProperty("spring.application.name"),
+                protocol,
+                env.getProperty("server.port"),
+                protocol,
+                InetAddress.getLocalHost().getHostAddress(),
+                env.getProperty("server.port"),
+                env.getActiveProfiles());
     }
 }

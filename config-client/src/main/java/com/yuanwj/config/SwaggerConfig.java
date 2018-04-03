@@ -2,6 +2,7 @@ package com.yuanwj.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -17,6 +18,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
  */
 @Configuration
 @EnableSwagger2
+@Profile(value = "!prod") //非prod环境才会生成swagger-ui文档
 public class SwaggerConfig {
 
     @Inject
@@ -32,7 +34,7 @@ public class SwaggerConfig {
         return docket;
     }
 
-    
+
 
     public ApiInfo apiInfo(){
         ApiInfo apiInfo=new ApiInfo(
