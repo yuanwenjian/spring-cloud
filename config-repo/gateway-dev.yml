@@ -3,6 +3,8 @@ server:
 eureka:
     instance:
         prefer-ip-address: true
+        appname: ${spring.application.name}
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     client:
         serviceUrl:
 #            defaultZone: http://admin:admin@localhost:8761/eureka/
@@ -19,7 +21,10 @@ zuul:
 #    eureka:
 #        enabled: false
 
-spring:
-    cloud:
-        config:
-            overrideNone: true
+## 默认远程配置中心文件会覆盖本地文件,如果需要可以通过一下配置修改
+#spring:
+#    cloud:
+#        config:
+#            overrideNone: true #远程配置优先级是否设为最低,不覆盖任何配置;默认为false
+#            allow-override: false # 允许远程配置覆盖,默认为true
+#            override-system-properties: false # 允许远程配置覆盖系统配置,默认为true

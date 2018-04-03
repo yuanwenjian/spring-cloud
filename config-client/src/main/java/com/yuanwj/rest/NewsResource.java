@@ -31,14 +31,17 @@ public class NewsResource {
         PageHelper.startPage(1,5);
         List<News> newses =  newsMapper.findAll();
         PageInfo<News> pageInfo = new PageInfo<>(newses);
+//        System.out.println(pageInfo);
         return pageInfo;
     }
 
     @RequestMapping(value = "searchMap",method = RequestMethod.GET)
     @ApiOperation("根据title搜索新闻")
-    public List<Map> searchMap(String title){
+    public PageInfo<Map> searchMap(String title){
+        PageHelper.startPage(1,5);
         List<Map> maps = newsMapper.searchMap(title);
-        return newsMapper.searchMap(title);
+        PageInfo<Map> pageInfo = new PageInfo<>(maps);
+        return pageInfo;
     }
 
 }

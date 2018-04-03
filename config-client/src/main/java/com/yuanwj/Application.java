@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
  * Created by bmk on 17-11-28.
  */
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @EnableConfigurationProperties(BiocloudProperties.class)
 @MapperScan("com.yuanwj.repository")
 public class Application {
@@ -30,7 +30,7 @@ public class Application {
         if (env.getProperty("server.ssl.key-store") != null) {
             protocol = "https";
         }
-        LOG.info("\n----------------------------------------------------------\n\t" +
+        LOG.debug("\n----------------------------------------------------------\n\t" +
                         "Application '{}' is running! Access URLs:\n\t" +
                         "Local: \t\t{}://localhost:{}\n\t" +
                         "External: \t{}://{}:{}\n\t" +
