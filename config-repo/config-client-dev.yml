@@ -1,3 +1,23 @@
+server:
+    port: 8083
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/prataculture?useUnicode=true&characterEncoding=utf8&autoReconnect=true&noAccessToProcedureBodies=true
+        name: prataculture
+        username: root
+        password:
+
+    profiles:
+        active: dev
+    application:
+        name: config-client
+
+mybatis:
+    type-aliases-package: com.yuanwj.model
+    mapper-locations: classpath:/mybatis/mapper/*.xml
+    config-location: classpath:/mybatis/location-config.xml
+
 yuanwj:
     swagger:
         title: Config-client Remote API
@@ -15,22 +35,12 @@ yuanwj:
         password: 123.bmk
         username: bmk
         port: 22
-spring:
-    datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/prataculture?useUnicode=true&characterEncoding=utf8&autoReconnect=true&noAccessToProcedureBodies=true
-        name: prataculture
-        username: root
-        password:
-mybatis:
-    type-aliases-package: com.yuanwj.model
-    mapper-locations: classpath:mapper/*.xml
-    configuration:
-        mapUnderscoreToCamelCase: true
 
 eureka:
     instance:
         prefer-ip-address: true
+        appname: ${spring.application.name}
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     client:
         serviceUrl:
 #            defaultZone: http://admin:admin@localhost:8761/eureka/
