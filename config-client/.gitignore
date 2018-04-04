@@ -1,5 +1,5 @@
+target/
+*.iml
 .idea/
-*.log
-*.error
 .project/
 .settings/

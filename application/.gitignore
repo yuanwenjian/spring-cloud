@@ -1,1 +1,7 @@
-node_modules
+node_modules/
+*.iml
+target/
+.project/
+.settings/
+central-config/
+webpack/
