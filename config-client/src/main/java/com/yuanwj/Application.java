@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
  * Created by bmk on 17-11-28.
  */
 @SpringBootApplication
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 @EnableConfigurationProperties(BiocloudProperties.class)
 @MapperScan("com.yuanwj.repository")
 public class Application {

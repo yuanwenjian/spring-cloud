@@ -1,0 +1,6 @@
+spring:
+    cloud:
+        config:
+            uri: http://admin:admin@localhost:8761
+            profile: dev
+            name: sleuth

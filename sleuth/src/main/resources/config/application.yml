@@ -4,6 +4,9 @@ spring:
     application:
         name: sleuth
 
+    profiles:
+        active: dev
+
 eureka:
     instance:
         prefer-ip-address: true
