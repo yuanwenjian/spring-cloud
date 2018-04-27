@@ -1,6 +1,7 @@
 server:
     port: 8082
 spring:
+# datasource配置
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:3306/prataculture?useUnicode=true&characterEncoding=utf8&autoReconnect=true&noAccessToProcedureBodies=true
@@ -12,7 +13,16 @@ spring:
         active: dev
     application:
         name: config-client
-
+# sleuth配置
+    zipkin:
+        base-url: http://localhost:8084
+    sleuth:
+        sampler:
+            percentage: 1.0
+# 方便测试,允许本地覆盖
+    cloud:
+        config:
+            overrideNone: true
 mybatis:
     type-aliases-package: com.yuanwj.model
     mapper-locations: classpath:/mybatis/mapper/*.xml
@@ -46,7 +56,4 @@ eureka:
 #            defaultZone: http://admin:admin@localhost:8761/eureka/
             defaultZone: http://admin:admin@localhost:8761/eureka/
 
-#spring:
-#    cloud:
-#        config:
-#            overrideNone: true
+

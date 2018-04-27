@@ -79,7 +79,7 @@ eureka:
         instance-info-replication-interval-seconds: 10
         registry-fetch-interval-seconds: 10
         service-url:
-            defaultZone: http://admin:${security.user.password:admin}@localhost:${server.port}/eureka/
+            defaultZone: http://admin:${security.user.password:admin}@127.0.0.1:${server.port}/eureka/
     server:
         # see discussion about enable-self-preservation:
         # https://github.com/jhipster/generator-jhipster/issues/3654

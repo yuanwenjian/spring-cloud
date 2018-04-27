@@ -51,7 +51,7 @@ eureka:
         registry-fetch-interval-seconds: 10
         service-url:
 #            defaultZone: http://admin:${security.user.password:admin}@localhost:${server.port}/eureka/
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://127.0.0.1:8761/eureka/
 server:
     port: 8761
 security:

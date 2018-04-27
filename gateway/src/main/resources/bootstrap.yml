@@ -6,6 +6,6 @@ spring:
         name: gateway
     cloud:
         config:
-            uri: http://admin:admin@192.168.8.60:8761
+            uri: http://admin:admin@127.0.0.1:8761
             profile: dev
             name: gateway
