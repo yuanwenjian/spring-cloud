@@ -1,23 +1,37 @@
-#server:
-#    port: 8083
-#eureka:
-#    instance:
-#        prefer-ip-address: true
-#    client:
-#        serviceUrl:
-##            defaultZone: http://admin:admin@localhost:8761/eureka/
+server:
+    port: 8083
+eureka:
+    instance:
+        prefer-ip-address: true
+        appname: ${spring.application.name}
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+        serviceUrl:
 #            defaultZone: http://admin:admin@localhost:8761/eureka/
-#zuul:
-#    routes:
-#        config-client:
-#            path: /client/**
-#            service-id: config-client
-#
-#
-#
-##ribbon:
-##      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule # 配置服务端负载均衡策略
-#
-##ribbon:
-##    eureka:
-##        enabled: false
+            defaultZone: http://admin:admin@localhost:8761/eureka/
+
+spring:
+    zipkin:
+        base-url: http://localhost:8084
+    sleuth:
+        sampler:
+            percentage: 1.0
+zuul:
+    routes:
+        config-client:
+            path: /client/**
+            service-id: config-client
+#ribbon:
+#      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule # 配置服务端负载均衡策略
+
+#ribbon:
+#    eureka:
+#        enabled: false
+
+## 默认远程配置中心文件会覆盖本地文件,如果需要可以通过以下配置修改 方便测试允许覆盖
+#spring:
+#    cloud:
+#        config:
+#            overrideNone: true #远程配置优先级是否设为最低,不覆盖任何配置;默认为false
+#            allow-override: false # 允许远程配置覆盖,默认为true
+#            override-system-properties: false # 允许远程配置覆盖系统配置,默认为true
